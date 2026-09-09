@@ -70,7 +70,7 @@ np.r_[:10.]
 np.r_[:9:10j]
 np.arange(1., 11.)[:, np.newaxis]
 np.zeros((3, 4))
-np.zeros((3, 4, 5)).shape
+np.zeros((3, 4, 5))
 np.ones((3, 4))
 np.eye(3)
 np.diag(a)
@@ -116,7 +116,8 @@ np.linalg.matrix_rank(a)
 b = np.array([[6.], [15.], [25.]])
 scipy.linalg.solve(a, b)
 scipy.linalg.lstsq(m[:, :3], m[:, 3])
-scipy.linalg.solve(a.T, b.T.reshape(1, 3).T).T
+br = np.array([[6., 15., 25.]])
+scipy.linalg.solve(a.T, br.T).T
 U, S, Vh = scipy.linalg.svd(a); V = Vh.T
 U
 S
@@ -147,7 +148,9 @@ np.fft.fft(v)
 np.fft.ifft(np.fft.fft(v))
 # --- sorting ---
 np.sort(a)
+as0 = a.copy(); as0.sort(axis=0); as0
 np.sort(a, axis=1)
+as1 = a.copy(); as1.sort(axis=1); as1
 s = np.array([[3., 9.], [1., 8.], [2., 7.]])
 I = np.argsort(s[:, 0]); bs = s[I, :]; bs
 Z = np.c_[np.ones(5), np.arange(5.)]; yv = np.array([1., 3., 5., 7., 9.])
@@ -155,4 +158,4 @@ scipy.linalg.lstsq(Z, yv)
 sig = np.sin(np.linspace(0, 2 * np.pi, 20)); qd = 4
 signal.resample(sig, int(np.ceil(len(sig) / qd)))
 np.unique(np.array([3, 1, 2, 3, 1]))
-np.zeros((1, 3, 1)).squeeze().shape
+np.zeros((1, 3, 1)).squeeze()
