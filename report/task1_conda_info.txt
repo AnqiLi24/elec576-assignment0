@@ -1,0 +1,35 @@
+
+     active environment : elec576
+    active env location : /rhf-wq8/al318/miniconda3/envs/elec576
+            shell level : 1
+       user config file : /home/al318/.condarc
+ populated config files : /rhf-wq8/al318/miniconda3/.condarc
+                          /rhf-wq8/al318/miniconda3/condarc.d/anaconda-auth.yml
+          conda version : 26.3.2
+    conda-build version : not installed
+         python version : 3.13.13.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=zen5
+                          __conda=26.3.2=0
+                          __cuda=13.2=0
+                          __glibc=2.35=0
+                          __linux=5.15.0=0
+                          __unix=0=0
+       base environment : /rhf-wq8/al318/miniconda3  (writable)
+      conda av data dir : /rhf-wq8/al318/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /rhf-wq8/al318/miniconda3/pkgs
+                          /home/al318/.conda/pkgs
+       envs directories : /rhf-wq8/al318/miniconda3/envs
+                          /home/al318/.conda/envs
+    temporary directory : /tmp
+               platform : linux-64
+             user-agent : conda/26.3.2 requests/2.33.1 CPython/3.13.13 Linux/5.15.0-190-generic ubuntu/22.04.5 glibc/2.35 solver/libmamba conda-libmamba-solver/26.4.0 libmambapy/2.3.2 aau/0.7.6 c/. s/. e/.
+                UID:GID : 100228:100
+             netrc file : None
+           offline mode : False
+
