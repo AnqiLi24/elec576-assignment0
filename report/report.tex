@@ -12,101 +12,62 @@
 \lstset{
   basicstyle=\ttfamily\scriptsize,
   breaklines=true,
-  breakatwhitespace=false,
   columns=fullflexible,
   keepspaces=true,
   frame=single,
   framerule=0.3pt,
   rulecolor=\color{gray!60},
   backgroundcolor=\color{gray!5},
-  xleftmargin=2pt, xrightmargin=2pt,
   showstringspaces=false,
-  postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
 }
-\lstdefinestyle{py}{language=Python, basicstyle=\ttfamily\small,
-  keywordstyle=\color{blue!70!black}, commentstyle=\color{green!40!black},
-  stringstyle=\color{red!60!black}}
+\lstdefinestyle{py}{language=Python, basicstyle=\ttfamily\small}
 
 \newcommand{\STUDENTNAME}{Anqi Li}
 \newcommand{\GHUSER}{AnqiLi24}
 \newcommand{\GHREPO}{https://github.com/AnqiLi24/elec576-assignment0}
 
-\title{ELEC 576 / COMP 576 -- Fall 2026\\Assignment 0}
+\title{ELEC 576 / COMP 576 -- Assignment 0}
 \author{\STUDENTNAME}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-\noindent All commands below were run on a Linux workstation with Miniconda
-(conda 26.3.2) in a dedicated environment named \texttt{elec576}
-(Python 3.12, NumPy, SciPy, Matplotlib, IPython). Tasks 2--4 were run inside
-an interactive IPython session; the transcripts are reproduced verbatim with
-their \texttt{In [n]:} / \texttt{Out[n]:} prompts.
-
-\section{Python machine learning stack (Anaconda)}
-\subsection*{Task 1: \texttt{conda info}}
+\section*{Task 1}
+Output of \texttt{conda info}:
 \lstinputlisting{task1_conda_info.txt}
 
-\section{Transition from MATLAB to Python}
-\subsection*{Task 2: the ``Linear Algebra Equivalents'' table in IPython}
-Every row of the ``Linear algebra equivalents'' table of
-\href{https://numpy.org/doc/stable/user/numpy-for-matlab-users.html}{NumPy for MATLAB users}
-was run in IPython. The matrices used are
-$a$, a $3\times 3$ non-singular matrix, for the linear-algebra rows;
-$m$, a $21\times 9$ matrix, for the row-slicing rows that need at least
-21 rows and 9 columns; a length-3 vector $v$ and a $2\times 3$ matrix $u$
-with entries around 0.5 for the comparison rows; two $2\times 2$ blocks
-$p$ and $q$ for the block and concatenation rows; and a symmetric
-positive-definite \texttt{spd} for Cholesky, generalised eigenvalues and
-conjugate gradients. Two entries of the table needed a small correction to
-run on current SciPy: \texttt{signal.resample} requires an integer number
-of samples, so \texttt{np.ceil(...)} is wrapped in \texttt{int(...)}, and
-the closing parenthesis missing from \texttt{np.ix\_(np.r\_[0:9.],np.r\_[0:6.]}
-was added.
-
+\section*{Task 2}
+I ran the commands in the ``Linear Algebra Equivalents'' table in IPython.
+Most rows use a $3\times 3$ matrix \texttt{a}. The slicing rows need more
+rows and columns, so those use a $21\times 9$ matrix \texttt{m}.
+Two commands from the table did not run as written on the current SciPy:
+\texttt{signal.resample} needs an integer number of samples, and the
+\texttt{np.ix\_(np.r\_[0:9.],np.r\_[0:6.]} line is missing a closing parenthesis.
+I fixed both.
 \lstinputlisting{task2_transcript.txt}
 
-\section{Plotting (Matplotlib / PyPlot)}
-\subsection*{Task 3: the given script}
-The script from the assignment was typed into IPython. Because the session
-runs on a headless server, the figure that \texttt{plt.show()} would display
-is written to a file with an additional \texttt{savefig} call.
+\section*{Task 3}
+I ran the script on a server without a display, so I added a
+\texttt{savefig} line to save the figure.
 \lstinputlisting{task3_transcript.txt}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{task3_figure.png}
-\caption{Figure produced by the Task 3 script.}
+\includegraphics[width=0.65\linewidth]{task3_figure.png}
 \end{figure}
 
-\subsection*{Task 4: a figure of my choice}
-The figure has four panels: a damped oscillation with its exponential
-envelope, a scatter plot of 500 samples from a correlated bivariate Gaussian
-coloured by polar angle, a histogram of 2{,}000 standard-normal samples
-against the analytic density, and a filled image of $\sin x \cos y$ with
-contour lines. The code, as run in IPython:
+\section*{Task 4}
+Code:
 \lstinputlisting[style=py]{../scripts/task4_plot.py}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{task4_figure.png}
-\caption{Figure produced by the Task 4 code.}
 \end{figure}
-The IPython transcript of the same session:
-\lstinputlisting{task4_transcript.txt}
 
-\section{Version control system (GitHub)}
-\subsection*{Task 5: VCS account}
-GitHub account: \href{https://github.com/\GHUSER}{\texttt{\GHUSER}}.
+\section*{Task 5}
+GitHub account: \href{https://github.com/\GHUSER}{\GHUSER}
 
-\section{Integrated development environment}
-\subsection*{Task 6: project committed and pushed to GitHub}
-The project for this assignment was created in Visual Studio Code with the
-\texttt{elec576} conda environment as its interpreter. It contains the scripts
-that generate every result in this report, the environment specification,
-and the source of this report. It was committed with Git and pushed to a
-public GitHub repository:
-\begin{center}
-\url{\GHREPO}
-\end{center}
+\section*{Task 6}
+Project (VS Code), pushed to GitHub: \url{\GHREPO}
 
 \end{document}
