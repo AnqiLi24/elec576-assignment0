@@ -11,7 +11,7 @@ the scripts in this repository.
 | `environment.yml` | conda environment `elec576` (Python 3.12, NumPy, SciPy, Matplotlib, IPython) |
 | `scripts/task2_linear_algebra.py` | every row of the "Linear algebra equivalents" table from *NumPy for MATLAB users*, one command per line |
 | `scripts/task3_plot.py` | the plotting script given in the assignment |
-| `scripts/task4_plot.py` | a four-panel Matplotlib figure of my choice |
+| `scripts/task4_plot.py` | a Matplotlib figure of my choice (sin and cos) |
 | `scripts/run_ipython.py` | types a command file into a real IPython session and saves the transcript with its `In [n]:` / `Out[n]:` prompts |
 | `report/` | LaTeX source, transcripts, figures and the compiled PDF report |
 
