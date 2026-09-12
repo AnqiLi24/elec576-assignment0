@@ -1,9 +1,3 @@
-"""Drive a real IPython session through a pty and save the transcript.
-
-usage: python run_ipython.py <commands_file> <transcript_out>
-Every non-blank line of <commands_file> is typed into IPython exactly as a
-user would, so the transcript carries genuine In [n]: / Out[n]: prompts.
-"""
 import os, re, sys
 import pexpect
 
@@ -26,6 +20,6 @@ for line in lines:
 child.sendline("exit")
 child.expect(pexpect.EOF)
 text = "".join(chunks).replace("\r\n", "\n").replace("\r", "")
-text = re.sub(r"In \[\d+\]: $", "", text)          # drop trailing empty prompt
+text = re.sub(r"In \[\d+\]: $", "", text)
 open(out, "w").write(text.rstrip() + "\n")
 print(f"{out}: {text.count('In [')} inputs, {text.count('Out[')} outputs")
