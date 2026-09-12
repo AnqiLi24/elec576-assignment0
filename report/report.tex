@@ -47,7 +47,20 @@
 \end{figure}
 
 \section*{Task 4}
-\lstinputlisting[style=py]{../scripts/task4_plot.py}
+\begin{lstlisting}[style=py]
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0, 2 * np.pi, 200)
+plt.plot(x, np.sin(x), label='sin(x)')
+plt.plot(x, np.cos(x), '--', label='cos(x)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('sin(x) and cos(x)')
+plt.legend()
+plt.grid(True)
+plt.show()
+plt.savefig('task4_figure.png', dpi=150, bbox_inches='tight')
+\end{lstlisting}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\linewidth]{task4_figure.png}
